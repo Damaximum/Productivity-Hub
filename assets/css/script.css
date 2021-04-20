@@ -1,6 +1,6 @@
 body {
-    margin: 0px;
-    padding: 0px; 
+    margin: 10px;
+    padding: 10px; 
 }
 
 h1 { 
@@ -20,9 +20,78 @@ span {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
 }
 
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: .5fr 1.7fr 1.7fr 1.5fr;
+    grid-template-areas: "nav nav"
+                         "timer todo"
+                         "timerstats timerstats"
+                         "api1 api2";
+    grid-gap: 2px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#timer {
+    background-color: cadetblue;
+    grid-area: timer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#todo {
+    background-color: cadetblue;
+    grid-area: todo;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#todo p {
+    color: white;
+    background-color: black;
+}
+
+#timerstats {
+    background-color: cyan;
+    grid-area: timerstats;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#api1 {
+    background-color: rgb(77, 150, 150);
+    grid-area: api1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#api2 {
+    background-color: rgb(77, 150, 150);
+    grid-area: api2;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+
 .footer {
     text-align: center;
 }
 
+@media only screen and (max-width: 600px) {
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        grid-template-areas:    "nav"
+                                "method"
+                                "timer"
+                                "todo"
+                                "timerstats"
+                                "api1"
+                                "api2";
+    }
+}
 
 
