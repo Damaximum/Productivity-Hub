@@ -1,0 +1,28 @@
+body {
+    margin: 0px;
+    padding: 0px; 
+}
+
+h1 { 
+    font-size: 50px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.collapsible-header {
+    display: block;
+    background-color: burlywood;
+    
+}
+
+span {
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
+}
+
+.footer {
+    text-align: center;
+}
+
+
+
