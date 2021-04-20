@@ -6,6 +6,7 @@ var setTime;
 var minutes = Math.floor((setTime % (1000 * 60 * 60)) / (1000 * 60));
 var seconds = Math.floor((setTime % (1000 * 60)) / 1000);
 var pause = false;
+var loop = 0;
 
 function worktimer() {
     setTime = worktime;
@@ -23,7 +24,7 @@ function worktimer() {
 };
 
 function breaktimer() {
-    if (pomodoro === 8) {
+    if (loop === 1) {
         setTime = longbreak;
         var pTimer = setInterval(function (){
             if (!pause) {
@@ -32,7 +33,7 @@ function breaktimer() {
                 if (setTime === 0) {
                     clearInterval(pTimer);
                     pomodoro = 0;
-
+                    loop = 0
                 }
             }
         }, 1000);
@@ -46,6 +47,7 @@ function breaktimer() {
                     clearInterval(pTimer);
                     worktimer;
                     pomodoro = 0;
+                    loop++;
                 }
             }
         }, 1000);
@@ -85,3 +87,7 @@ $('.stop').on('click', function(e){
     e.preventDefault();
     $('#play-pause').removeClass('pause resume').addClass('start');
 })
+
+
+
+var pTimer = setInterval(setTime, 1000);
