@@ -3,22 +3,23 @@ var worktime = 1500;
 var shortbreak = 300;
 var longbreak = $('#breakselect').find(':selected').val();
 var setTime;
-var minutes = Math.floor((setTime % (1000 * 60 * 60)) / (1000 * 60));
-var seconds = Math.floor((setTime % (1000 * 60)) / 1000);
+var minutes;
+var seconds;
 var pause = false;
 var loop = 0;
-var timer;
+var pTimer;
 
 function worktimer() {
     setTime = worktime;
-    var pTimer = debounce(function() {
+    minutes = Math.floor((setTime % (1000 * 60 * 60)) / (1000 * 60));
+    seconds = Math.floor((setTime % (1000 * 60)) / 1000);
+    pTimer = debounce(function() {
         if (!pause) {
             setTime--;
             $('#timerDisplay').html(`${minutes} : ${seconds}`);
             if (setTime === 0) {
                 clearInterval(pTimer);
                 pomodoro++;
-                // breaktimer();
             }
         }   
     }, worktime)
@@ -27,7 +28,9 @@ function worktimer() {
 function breaktimer() {
     if (loop === 1) {
         setTime = longbreak;
-        var pTimer = setInterval(function (){
+        minutes = Math.floor((setTime % (1000 * 60 * 60)) / (1000 * 60));
+        seconds = Math.floor((setTime % (1000 * 60)) / 1000);
+        pTimer = setInterval(function (){
             if (!pause) {
                 setTime--;
                 $('#timerDisplay').html(`${minutes} : ${seconds}`);
@@ -40,7 +43,9 @@ function breaktimer() {
         }, 1000);
     } else if (pomodoro === 4) {
         setTime = longbreak;
-        var pTimer = setInterval(function (){
+        minutes = Math.floor((setTime % (1000 * 60 * 60)) / (1000 * 60));
+        seconds = Math.floor((setTime % (1000 * 60)) / 1000);
+        pTimer = setInterval(function (){
             if (!pause) {
                 setTime--;
                 $('#timerDisplay').html(`${minutes} : ${seconds}`);
@@ -54,13 +59,14 @@ function breaktimer() {
         }, 1000);
     } else {
         setTime = shortbreak;
-        var pTimer = setInterval(function (){
+        minutes = Math.floor((setTime % (1000 * 60 * 60)) / (1000 * 60));
+        seconds = Math.floor((setTime % (1000 * 60)) / 1000);
+        pTimer = setInterval(function (){
             if (!pause) {
                 setTime--;
                 $('#timerDisplay').html(`${minutes} : ${seconds}`);
                 if (setTime === 0) {
                     clearInterval(pTimer);
-                    worktimer;
                 }
             }
         }, 1000);
