@@ -22,7 +22,7 @@
     <section>
       <ul class="collapsible">
         <li>
-          <div class="collapsible-header center"><h2>What is a Pomodoro?</h2></div>
+          <div class="collapsible-header center"><h2>What is the Pomodoro technique?</h2></div>
           <div class="collapsible-body center"><span>A method for staying focused and mentally fresh</span>            
              <ul>               
               <img width="660" alt="Screen Shot 2021-04-18 at 7 02 47 PM" src="https://user-images.githubusercontent.com/79430431/115171881-e8f7b680-a078-11eb-8e87-bc4b1a903cc5.png">
@@ -32,17 +32,95 @@
       </ul>      
     </section>
 
-    <section>
+      <div class="container">
+        <div id="timer">
+          <h3>Timer</h3>
+          <br/>
+          <span class="timerDisplay">25 : 00</span>
+          <br/>
+          <br/>
+          <div class="row">
+            <button class="start waves-effect waves-light btn col s8 offset-s2"><i class="large material-icons">play_arrow</i></button>
 
-    </section>
+            <button class="pause hidden waves-effect waves-light btn col s4 offset-s2"><i class="large material-icons">pause</i></button>
 
-    <section>
+            <button class="resume hidden waves-effect waves-light btn col s4 offset-s2"><i class="large material-icons">play_arrow</i></button>
 
-    </section>
+            <button class="stop hidden waves-effect waves-light btn col s4 push-s1"><i class="large material-icons">stop</i></button>
 
-    <section>
+            <!-- <button data-target="modal1" class="btn modal-trigger">Modal 1 test</button>
+            <button data-target="modal2" class="btn modal-trigger">Modal 2 test</button>
+            <button data-target="modal3" class="btn modal-trigger">Modal 3 test</button>
+            <button class="pomodorotest btn" > Pomodoro Loop Test</button>
+            <button class="looptest btn">Loop Test</button> -->
+            
+            <div id="modal1" class="modal modal-fixed-footer">
+              <div class="modal-content">
+                <h4>Good Work! Take a quick break!</h4>
+                <p>Working hard is good, but breaks are important. Especially to avoid burning out and losing productivity. Sit back and relax, or stand up and stretch. Staying still for too long is bad both mentally and physically.</p>
+              </div>
+              <div class="modal-footer">
+                <a class="modal-close waves-effect waves-green btn-flat" id="modalbutton1">Alright!</a>
+                <button class="modal-close waves-effect waves-green btn-flat pomoDone">Let's Stop Here...</button>
+              </div>
+            </div>
 
-    </section>
+            <div id="modal2" class="modal modal-fixed-footer">
+              <div class="modal-content">
+                <h4>Nice! That's four pomodoros. Time for a longer break!</h4>
+                <p>You've been working hard for a while now. Time for a well deserved break! Grab a snack, or just chill.</p>
+                <div class="input-field col s6 offset-s3">
+                  <select id='breakselect'>
+                    <option value="" data-time="900" disabled selected>Choose your long break.</option>
+                    <option value='900' data-time="900">15 Mins</option>
+                    <option value='1200' data-time="1200">20 Mins</option>
+                    <option value='1500' data-time="1500">25 Mins</option>
+                    <option value='1800' data-time="1800">30 Mins</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <a class="modal-close waves-effect waves-green btn-flat" id="modalbutton2">Break Time!</a>
+                <button class="modal-close waves-effect waves-green btn-flat pomoDone">Let's Stop Here...</button>
+              </div>
+            </div>
+
+            <div id="modal3" class="modal modal-fixed-footer">
+              <div class="modal-content">
+                <h4>That's two cycles of pomodoro!</h4>
+                <p>Congratulations! you've been at this for a while now! Go ahead and stop if you'd like, or if you want to continue, press the start button under the timer again to start anew!</p>
+              </div>
+              <div class="modal-footer">
+                <a class="modal-close waves-effect waves-green btn-flat pomoDone">Close</a>
+              </div>
+            </div>
+
+            <div id="modal4" class="modal modal-fixed-footer">
+              <div class="modal-content">
+                <h4>Breaktime is Over!</h4>
+                <p>Alright, after a quick break, I hope that you're ready and raring to continue!</p>
+              </div>
+              <div class="modal-footer">
+                <a class="modal-close waves-effect waves-green btn-flat" id="modalbutton3">Let's Continue!</a>
+                <button class="modal-close waves-effect waves-green btn-flat pomoDone">Let's Stop Here...</button>
+              </div>
+            </div>
+        </div>
+        </div>
+        <div id="todo">
+          <h3>To-Do</h3>
+            <p>To Do Input</p>
+        </div>
+        <div id="timerstats">
+          <h3>Timer Stats</h3>
+        </div>
+        <div id="api1">
+          <h3>API1</h3>
+        </div>
+        <div id="api2">
+          <h3>API2</h3>
+        </div>
+      </div>    
     
     <footer class="footer">
       <p>&copy; Spring 2021 🍅 🍅 Brought to You by Damaximum in BootCampSpot</p>
