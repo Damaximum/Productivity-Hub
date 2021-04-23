@@ -68,7 +68,7 @@ function breaktimer() {
                     clearInterval(pTimer);
                     pomodoro = 0;
                     loop = 0;
-                    // TODO: start timer back up
+                    
                     $('#modal3').modal('open');
                 }
             }
@@ -85,7 +85,7 @@ function breaktimer() {
                     clearInterval(pTimer);
                     pomodoro = 0;
                     loop++;
-                    // TODO: start timer back up
+                    
                     $('#modal3').modal('open');
                 }
             }
@@ -106,7 +106,7 @@ function shortBreakTimer() {
             $('.timerDisplay').html(`${minutes} : ${seconds}`);
             if (setTime === 0) {
                 clearInterval(pTimer);
-                // TODO: start timer back up
+                
                 $('#modal3').modal('open');
             }
         }
@@ -171,3 +171,35 @@ $('.pomoDone').on('click', function(e) {
 //     pomodoro = 4;
 //     loop = 2;
 // });
+
+// Joke API and Functionality
+function jokeAPI() {
+    var jokeCall = 'https://official-joke-api.appspot.com/jokes/random';
+    fetch(jokeCall)
+    .then(function (res) {
+        return res.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        $('#jokeSetup').html(data.setup);
+        $('#jokePunchline').html(data.punchline);
+        $('#jokeNext').removeClass('hidden');
+    })
+    .catch(function (err) {
+        console.error(err);
+    });
+};
+
+$('#jokeTest').on('click', jokeAPI);
+$('#jokeNext').on('click', function() {
+    $('#jokeNext').addClass('hidden');
+    $('#jokeEnd').removeClass('hidden');
+    $('#jokePunchline').removeClass('invisible');
+});
+$('#jokeEnd').on('click', function() {
+    $('#jokeEnd').addClass('hidden');
+    $('#jokePunchline').addClass('invisible');
+    $('#jokeSetup').html('');
+    $('#jokePunchline').html('');
+    jokeAPI();
+});

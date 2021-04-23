@@ -48,6 +48,7 @@
 
             <button class="stop hidden waves-effect waves-light btn col s4 push-s1"><i class="large material-icons">stop</i></button>
 
+            <!-- Stuff to test the modals and timer functions -->
             <!-- <button data-target="modal1" class="btn modal-trigger">Modal 1 test</button>
             <button data-target="modal2" class="btn modal-trigger">Modal 2 test</button>
             <button data-target="modal3" class="btn modal-trigger">Modal 3 test</button>
@@ -118,7 +119,19 @@
           <h3>API1</h3>
         </div>
         <div id="api2">
-          <h3>API2</h3>
+          <h3>Insta-Joke-a-Tron</h3>
+          <button class="waves-effect waves-light btn" id="jokeTest"> Grab a Joke </button>
+          <div id="jokeDisplay">
+
+            <span id="jokeSetup"></span>
+            <br/>
+            <span class="invisible" id="jokePunchline"></span>
+          </div>
+          <div>
+            <button class="waves-effect waves-light btn col s12 hidden" id="jokeNext">Next</button>
+            <button class="waves-effect waves-light btn col s12 hidden" id="jokeEnd">New Joke</button>
+          </div>
+          <br/>
         </div>
       </div>    
     
