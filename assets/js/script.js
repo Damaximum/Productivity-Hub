@@ -203,3 +203,4 @@ $('#jokeEnd').on('click', function() {
     $('#jokePunchline').html('');
     jokeAPI();
 });
+
