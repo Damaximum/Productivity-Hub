@@ -76,6 +76,16 @@ span {
 }
 
 
+
+
+.hidden {
+    display: none;
+}
+.invisible {
+    visibility: hidden;
+}
+
+
 .footer {
     text-align: center;
 }
@@ -93,5 +103,4 @@ span {
                                 "api2";
     }
 }
-
 
