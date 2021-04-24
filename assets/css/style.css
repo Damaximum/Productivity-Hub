@@ -52,14 +52,14 @@ span {
 }
 
 #cutepix {
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
     grid-area: cutepix;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
 }
 
 #memeGen {
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
     grid-area: memeGen;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
