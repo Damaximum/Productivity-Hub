@@ -172,6 +172,28 @@ $('.pomoDone').on('click', function(e) {
 //     loop = 2;
 // });
 
+// Ramdon Quotes API and Functionality
+function swAPI() {
+    var swCall = 'https://type.fit/api/quotes';
+    fetch(swCall)
+    .then(function (res) {
+        return res.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        var i = Math.floor(Math.random() * 1642);
+            $('#quoteSetup').html(data[i].text);
+    })
+    .catch(function (err) {
+        console.error(err);
+    });
+};
+
+$('#swQuote').on('click', swAPI);
+$('#nextQuote').on('click', function() {
+    swAPI();
+});
+
 // Joke API and Functionality
 function jokeAPI() {
     var jokeCall = 'https://official-joke-api.appspot.com/jokes/random';
@@ -204,3 +226,76 @@ $('#jokeEnd').on('click', function() {
     jokeAPI();
 });
 
+//----------------------To Do List----------------------
+var toDoInput = $("#to-do-text"); 
+var toDoForm = $("#to-do-form");
+var toDoList = $("#to-do-list");
+
+var toDos = [];
+
+function createToDos() {
+    toDoList.html("");
+    for (var i = 0; i < toDos.length; i++) {
+        var toDo = toDos[i];
+
+        var li = $('<li>'); 
+        li.text(toDo); 
+        li.attr("data-index", i); 
+
+        var button = $('<button>'); 
+        button.text("Completed"); 
+
+        li.append(button); 
+        toDoList.append(li); 
+    }
+}
+
+function init() {
+    var storedToDos = JSON.parse(localStorage.getItem("toDos"));
+
+    if (storedToDos !== null) {
+        toDos = storedToDos;
+    }
+
+    createToDos();
+}
+
+function storeToDos() {
+    localStorage.setItem("toDos", JSON.stringify(toDos));
+}
+
+toDoForm.on("submit", function(event) { 
+    event.preventDefault();
+
+    var toDoText = toDoInput.val().trim(); 
+    console.log(toDoText);
+
+    if (toDoText === "") {
+        return;
+    }
+
+    toDos.push(toDoText);
+    toDoInput.val(""); 
+
+    storeToDos();
+    createToDos();
+});
+
+toDoList.on("click", function(event) { 
+    event.preventDefault();
+
+    var element = event.target;
+    console.log(element);
+
+    if (element.matches("button")) {
+        var index = element.parentElement.getAttribute("data-index");
+        toDos.splice(index, 1);
+        element.remove(); 
+
+        storeToDos();
+        createToDos();
+    }
+});
+
+init();
+//----------------------End of To Do List----------------------
