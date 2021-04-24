@@ -27,7 +27,7 @@ span {
     grid-template-rows: .5fr 1.7fr 1.7fr 1.5fr;
     grid-template-areas: "nav nav"
                          "timer todo"
-                         "timerstats timerstats"
+                         "cutepix memeGen"
                          "api1 api2";
     grid-gap: 2px;
     font-weight: 800;
@@ -45,6 +45,20 @@ span {
 #todo {
     background-color: cadetblue;
     grid-area: todo;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#cutepix {
+    background-color: cadetblue;
+    grid-area: cutepix;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#memeGen {
+    background-color: cadetblue;
+    grid-area: memeGen;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
 }
@@ -98,7 +112,8 @@ span {
                                 "method"
                                 "timer"
                                 "todo"
-                                "timerstats"
+                                "cutepix"
+                                "memeGen"
                                 "api1"
                                 "api2";
     }

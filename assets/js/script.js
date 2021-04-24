@@ -277,3 +277,37 @@ toDoList.on("click", function(event) {
 
 init();
 //----------------------End of To Do List----------------------
+
+//----------------------Cute Pictures API----------------------
+function cutePixGen() {
+    var imageType = ["cute", "cute+kitten", "cute+cat", "cute+puppy", "cute+dog", "kitten", "puppy", "cat", "dog", "hedgehog", "sloth"];
+    var randomType = imageType[Math.floor(Math.random() * imageType.length)];
+    var cutePixAPI = `https://pixabay.com/api/?key=21316291-4e0d90ed2a47cbd7d71f6e907&q=${randomType}&image_type=photo&category=animals`;
+    console.log(randomType);
+
+    fetch(cutePixAPI)
+    .then(function (res) {
+        return res.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        var randomPix = Math.floor(Math.random() * data.hits.length);
+        console.log(data.hits.length);
+        console.log(randomPix);
+
+        var imgLink = data.hits[randomPix].largeImageURL;
+        $('#cutePixImage').attr('src', imgLink);
+    })
+    .catch(function (err) {
+        console.log(err)
+    });
+};
+
+
+$('#cutePixBtn').on('click', function (event) {
+    event.preventDefault();
+    $('#cutePixImage').attr('src', '');
+    cutePixGen();
+});
+//----------------------End of Cute Pictures API----------------------
+
