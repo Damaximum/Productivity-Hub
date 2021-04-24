@@ -26,18 +26,14 @@ Vanessa Maldonado
 <font size="5">Be Productive!</font>
 <font size="5">Don’t Burn Out!</font>
 
-Using the Pomodoro Method will help users increase productivity.The pomodoro method gives us breaks and will help keep you on task. The Hub will help you spend those breaks without further distractions!
+This app will help users focus on a task they want to do, via the Pomodoro method. For this, the app provides a timer set for the Pomodoro method, a to-do list to help break down and keep track of the task, and some fun utilities to help kill time during the break without leaving the hub.
 
-This project was design with the pomodoro technique in mind. The hub has a timer set to 1 pomodoro at a time of 25 minutes and 5 minutes break to follow. 
-The hub is incorporated with a to-do list that will allow users to write down what they wish to accomplish in the pomodoro time they selected. A user is advised to focus on a single task from list per each pomodoro, break down complex projects, and combine small tasks. Once a pomodoro is set user must focus on task and nothing else until it rings. After every 4th pomodoro, user will have the option to select a 15 minute or 30 minute break. 
+# Project Layout 
 
-While user is on their break, the hub has APIs incorporated, such as quotes, memes, jokes to help a person relax and not be thinking on their current working task. 
-
+<img width="1089" alt="Screen Shot 2021-04-24 at 3 29 39 PM" src="https://user-images.githubusercontent.com/79430431/115974493-08c42a00-a512-11eb-9c5e-399833bb84dc.png">
 
 
-
-
-<image>Layout Design Cover
+<img width="1085" alt="Screen Shot 2021-04-24 at 3 39 21 PM" src="https://user-images.githubusercontent.com/79430431/115974702-51c8ae00-a513-11eb-901a-6206a3cd3bc7.png">
 
 # Key Elements and Features:
 
@@ -47,20 +43,29 @@ Time Management
 
 Brain Relaxation 
 
-<image>How it works
 
 # Framework Used:
 
 HTML
+
 CSS
+
 JavaScript
+
 JQuery
 
 # API Reference:
 
-Materialize
-Quotes
-Jokes
+[Materialize](https://materializecss.com/)
+
+[Meme API by D3vd scrapes from reddit - Generates a random meme from reddit](https://github.com/D3vd/Meme_Api)
+
+[Official Joke API by 15Dkatz - Generates a random Joke](https://github.com/15Dkatz/official_joke_api)
+
+[Inspirational Quotes API - Generates a random inspirational quote](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
+
+[Cute Pictures API - Generates a cute picture (usually an animal)](https://pixabay.com/api/docs/#api_rate_limit)
+
 
 
 # Copyright and License:
