@@ -47,6 +47,20 @@ span {
     padding-top: var(--main-padding);
 }
 
+#cutepix {
+    background-color: cadetblue;
+    grid-area: cutepix;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#memeGen {
+    background-color: cadetblue;
+    grid-area: memeGen;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
 #todo p {
     color: white;
     background-color: black;
