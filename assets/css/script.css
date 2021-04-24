@@ -5,9 +5,13 @@ h1 {
     margin-top: 40px;
 }
 
+.nav-wrapper{
+    background-color: #C62828;
+}
+
 .collapsible-header {
     display: block;
-    background-color: burlywood; 
+    background-color: rgb(253, 133, 112); 
 }
 
 span {
@@ -15,7 +19,7 @@ span {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
 }
 
-.container {
+.row1 {
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr;
@@ -34,14 +38,14 @@ span {
 }
 
 #timer {
-    background-color: turquoise;
+    background-color: white;
     grid-area: timer;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
 }
 
 #todo {
-    background-color: turquoise;
+    background-color: white;
     grid-area: todo;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
@@ -63,8 +67,13 @@ span {
 
 #todo p {
     color: white;
-    background-color: black;
+    background-color: #C62828;
 }
+
+.label {
+    color: black;
+}
+
 
 #cutepix {
     grid-area: cutepix;
@@ -79,14 +88,14 @@ span {
 }
 
 #api1 {
-    background-color: bisque;
+    background-color: rgb(253, 133, 112);
     grid-area: api1;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
 }
 
 #api2 {
-    background-color: bisque;
+    background-color: rgb(253, 133, 112);
     grid-area: api2;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
