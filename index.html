@@ -112,8 +112,13 @@
         </div>
         </div>
         <div id="todo">
-          <h3>To-Do</h3>
-            <p>To Do Input</p>
+          <h3>To-Do List</h3>
+          <form id="to-do-form" method="POST">
+            <label for="to-do-text">What would you like to accomplish today? </label>
+            <input type="text" placeholder="I want to..." name="to-do-text" id="to-do-text"/>
+          </form>
+          <p>Your current tasks: </p>
+          <ul id="to-do-list"></ul>
         </div>
         <div id="timerstats">
           <h3>Timer Stats</h3>
