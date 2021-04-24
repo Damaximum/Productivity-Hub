@@ -108,6 +108,21 @@ span {
     visibility: hidden;
 }
 
+.toDo {
+    text-align: left;
+    max-width: 80%;
+}
+
+.toDoBtn {
+    justify-content: right;
+}
+.liSpacing {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    word-break: break-all;
+}
+
 
 #footer {
     grid-area: footer;

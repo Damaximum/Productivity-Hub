@@ -238,13 +238,15 @@ function createToDos() {
     for (var i = 0; i < toDos.length; i++) {
         var toDo = toDos[i];
 
-        var li = $('<li>'); 
-        li.text(toDo); 
-        li.attr("data-index", i); 
+        var li = $('<li class="liSpacing">'); 
+        var pEl = $('<span class="toDo">');
+        pEl.text(toDo); 
+        pEl.attr("data-index", i); 
 
-        var button = $('<button>'); 
+        var button = $('<button class="waves-effect waves-light btn col s12 red darken-3 toDoBtn">'); 
         button.text("Completed"); 
 
+        li.append(pEl);
         li.append(button); 
         toDoList.append(li); 
     }
