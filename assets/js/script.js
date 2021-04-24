@@ -299,3 +299,32 @@ toDoList.on("click", function(event) {
 
 init();
 //----------------------End of To Do List----------------------
+
+//---------------------- Meme Generator --------------------
+
+
+function memeGen() {
+    var memeAPI = 'https://meme-api.herokuapp.com/gimme';
+
+    fetch(memeAPI)
+    .then(function (res) {
+        return res.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        $('#memeTitle').html(data.title);
+        $('#memeImage').attr('src', data.url).removeClass('hidden');
+    })
+    .catch(function (err) {
+        console.error(err);
+    });
+};
+
+
+$('#memeGenBtn').on('click', function (e) {
+    e.preventDefault();
+    $('#memeTitle').html('');
+    $('#memeImage').attr('src', '').addClass('hidden');
+    memeGen();
+});
+//----------------------End of Meme Generator List--------------------

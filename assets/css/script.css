@@ -1,7 +1,3 @@
-body {
-    margin: 10px;
-    padding: 10px; 
-}
 
 h1 { 
     font-size: 50px;
@@ -26,13 +22,15 @@ span {
     grid-template-rows: .5fr 1.7fr 1.7fr 1.5fr .8fr;
     grid-template-areas: "nav nav"
                          "timer todo"
-                         "timerstats timerstats"
+                         "cutepix memeGen"
                          "api1 api2"
                          "footer footer";
     grid-gap: 2px;
     font-weight: 800;
     text-transform: uppercase;
     text-align: center;
+    /* margin: 10px;
+    padding: 10px;  */
 }
 
 #timer {
@@ -54,9 +52,14 @@ span {
     background-color: black;
 }
 
-#timerstats {
-    background-color: darkgray;
-    grid-area: timerstats;
+#cutepix {
+    grid-area: cutepix;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#memeGen {
+    grid-area: memeGen;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
 }
@@ -83,9 +86,13 @@ span {
 }
 
 
-.footer {
+#footer {
     grid-area: footer;
     text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    font-weight: normal; 
 }
 
 @media only screen and (max-width: 600px) {
@@ -96,9 +103,11 @@ span {
                                 "method"
                                 "timer"
                                 "todo"
-                                "timerstats"
+                                "cutepix"
+                                "memeGen"
                                 "api1"
-                                "api2";
+                                "api2"
+                                "footer";
     }
 }
 
