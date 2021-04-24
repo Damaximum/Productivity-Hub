@@ -172,6 +172,28 @@ $('.pomoDone').on('click', function(e) {
 //     loop = 2;
 // });
 
+// Ramdon Quotes API and Functionality
+function swAPI() {
+    var swCall = 'https://type.fit/api/quotes';
+    fetch(swCall)
+    .then(function (res) {
+        return res.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        var i = Math.floor(Math.random() * 1642);
+            $('#quoteSetup').html(data[i].text);
+    })
+    .catch(function (err) {
+        console.error(err);
+    });
+};
+
+$('#swQuote').on('click', swAPI);
+$('#nextQuote').on('click', function() {
+    swAPI();
+});
+
 // Joke API and Functionality
 function jokeAPI() {
     var jokeCall = 'https://official-joke-api.appspot.com/jokes/random';

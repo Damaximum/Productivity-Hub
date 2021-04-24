@@ -11,8 +11,7 @@ h1 {
 
 .collapsible-header {
     display: block;
-    background-color: burlywood;
-    
+    background-color: burlywood; 
 }
 
 span {
@@ -24,11 +23,12 @@ span {
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: .5fr 1.7fr 1.7fr 1.5fr;
+    grid-template-rows: .5fr 1.7fr 1.7fr 1.5fr .8fr;
     grid-template-areas: "nav nav"
                          "timer todo"
                          "timerstats timerstats"
-                         "api1 api2";
+                         "api1 api2"
+                         "footer footer";
     grid-gap: 2px;
     font-weight: 800;
     text-transform: uppercase;
@@ -36,14 +36,14 @@ span {
 }
 
 #timer {
-    background-color: cadetblue;
+    background-color: turquoise;
     grid-area: timer;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
 }
 
 #todo {
-    background-color: cadetblue;
+    background-color: turquoise;
     grid-area: todo;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
@@ -55,28 +55,25 @@ span {
 }
 
 #timerstats {
-    background-color: cyan;
+    background-color: darkgray;
     grid-area: timerstats;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
 }
 
 #api1 {
-    background-color: rgb(77, 150, 150);
+    background-color: bisque;
     grid-area: api1;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
 }
 
 #api2 {
-    background-color: rgb(77, 150, 150);
+    background-color: bisque;
     grid-area: api2;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
 }
-
-
-
 
 .hidden {
     display: none;
@@ -87,6 +84,7 @@ span {
 
 
 .footer {
+    grid-area: footer;
     text-align: center;
 }
 
