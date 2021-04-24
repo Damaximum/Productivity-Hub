@@ -172,6 +172,28 @@ $('.pomoDone').on('click', function(e) {
 //     loop = 2;
 // });
 
+// Ramdon Quotes API and Functionality
+function swAPI() {
+    var swCall = 'https://type.fit/api/quotes';
+    fetch(swCall)
+    .then(function (res) {
+        return res.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        var i = Math.floor(Math.random() * 1642);
+            $('#quoteSetup').html(data[i].text);
+    })
+    .catch(function (err) {
+        console.error(err);
+    });
+};
+
+$('#swQuote').on('click', swAPI);
+$('#nextQuote').on('click', function() {
+    swAPI();
+});
+
 // Joke API and Functionality
 function jokeAPI() {
     var jokeCall = 'https://official-joke-api.appspot.com/jokes/random';
@@ -278,12 +300,41 @@ toDoList.on("click", function(event) {
 init();
 //----------------------End of To Do List----------------------
 
+//---------------------- Meme Generator --------------------
+
+
+function memeGen() {
+    var memeAPI = 'https://meme-api.herokuapp.com/gimme';
+
+    fetch(memeAPI)
+    .then(function (res) {
+        return res.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        $('#memeTitle').html(data.title);
+        $('#memeImage').attr('src', data.url).removeClass('hidden');
+    })
+    .catch(function (err) {
+        console.error(err);
+    });
+};
+
+$('#memeGenBtn').on('click', function (e) {
+    e.preventDefault();
+    $('#memeTitle').html('');
+    $('#memeImage').attr('src', '').addClass('hidden');
+    memeGen();
+});
+//----------------------End of Meme Generator List--------------------
+
+
 //----------------------Cute Pictures API----------------------
 function cutePixGen() {
     var imageType = ["cute", "cute+kitten", "cute+cat", "cute+puppy", "cute+dog", "kitten", "puppy", "cat", "dog", "hedgehog", "sloth"];
     var randomType = imageType[Math.floor(Math.random() * imageType.length)];
     var cutePixAPI = `https://pixabay.com/api/?key=21316291-4e0d90ed2a47cbd7d71f6e907&q=${randomType}&image_type=photo&category=animals`;
-    console.log(randomType);
+    //console.log(randomType);
 
     fetch(cutePixAPI)
     .then(function (res) {
@@ -291,23 +342,20 @@ function cutePixGen() {
     })
     .then(function (data) {
         console.log(data);
-        var randomPix = Math.floor(Math.random() * data.hits.length);
-        console.log(data.hits.length);
-        console.log(randomPix);
+          var randomPix = Math.floor(Math.random() * data.hits.length);
+        //console.log(data.hits.length);
+        //console.log(randomPix);
 
         var imgLink = data.hits[randomPix].largeImageURL;
         $('#cutePixImage').attr('src', imgLink);
     })
     .catch(function (err) {
-        console.log(err)
+        console.log(err);
     });
 };
-
-
 $('#cutePixBtn').on('click', function (event) {
     event.preventDefault();
     $('#cutePixImage').attr('src', '');
     cutePixGen();
 });
 //----------------------End of Cute Pictures API----------------------
-

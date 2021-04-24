@@ -6,164 +6,179 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
     <link rel="stylesheet" href="./assets/css/script.css">
     <title>Productivity Hub</title>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="nav-wrapper">
-              <h1>Productivity Hub</h1>
-            </div>
-        </nav>
-    </header>    
-
-    <section>
-      <ul class="collapsible">
-        <li>
-
-          <div class="collapsible-header center"><h2>What is the Pomodoro technique?</h2></div>
-
-          <div class="collapsible-body center"><span>A method for staying focused and mentally fresh</span>            
-             <ul>               
-              <img width="660" alt="Screen Shot 2021-04-18 at 7 02 47 PM" src="https://user-images.githubusercontent.com/79430431/115171881-e8f7b680-a078-11eb-8e87-bc4b1a903cc5.png">
-             </ul>          
-          </div>   
-        </li>
-      </ul>      
-    </section>
-
-      <div class="container">
-
-        <div id="timer">
-          <h3>Timer</h3>
-          <br/>
-          <span class="timerDisplay">25 : 00</span>
-          <br/>
-          <br/>
-          <div class="row">
-            <button class="start waves-effect waves-light btn col s8 offset-s2"><i class="large material-icons">play_arrow</i></button>
-
-            <button class="pause hidden waves-effect waves-light btn col s4 offset-s2"><i class="large material-icons">pause</i></button>
-
-            <button class="resume hidden waves-effect waves-light btn col s4 offset-s2"><i class="large material-icons">play_arrow</i></button>
-
-            <button class="stop hidden waves-effect waves-light btn col s4 push-s1"><i class="large material-icons">stop</i></button>
-
-            <!-- Stuff to test the modals and timer functions -->
-            <!-- <button data-target="modal1" class="btn modal-trigger">Modal 1 test</button>
-            <button data-target="modal2" class="btn modal-trigger">Modal 2 test</button>
-            <button data-target="modal3" class="btn modal-trigger">Modal 3 test</button>
-            <button class="pomodorotest btn" > Pomodoro Loop Test</button>
-            <button class="looptest btn">Loop Test</button> -->
-            
-            <div id="modal1" class="modal modal-fixed-footer">
-              <div class="modal-content">
-                <h4>Good Work! Take a quick break!</h4>
-                <p>Working hard is good, but breaks are important. Especially to avoid burning out and losing productivity. Sit back and relax, or stand up and stretch. Staying still for too long is bad both mentally and physically.</p>
+  <div class="main-contain">
+    <div class="content-wrap">
+      <header>
+          <nav>
+              <div class="nav-wrapper">
+                <h1>Productivity Hub</h1>
               </div>
-              <div class="modal-footer">
-                <a class="modal-close waves-effect waves-green btn-flat" id="modalbutton1">Alright!</a>
-                <button class="modal-close waves-effect waves-green btn-flat pomoDone">Let's Stop Here...</button>
-              </div>
-            </div>
+          </nav>
+      </header>    
+        <section>
+          <ul class="collapsible">
+            <li>
 
-            <div id="modal2" class="modal modal-fixed-footer">
-              <div class="modal-content">
-                <h4>Nice! That's four pomodoros. Time for a longer break!</h4>
-                <p>You've been working hard for a while now. Time for a well deserved break! Grab a snack, or just chill.</p>
-                <div class="input-field col s6 offset-s3">
-                  <select id='breakselect'>
-                    <option value="" data-time="900" disabled selected>Choose your long break.</option>
-                    <option value='900' data-time="900">15 Mins</option>
-                    <option value='1200' data-time="1200">20 Mins</option>
-                    <option value='1500' data-time="1500">25 Mins</option>
-                    <option value='1800' data-time="1800">30 Mins</option>
-                  </select>
+              <div class="collapsible-header center"><h2>What is the Pomodoro technique?</h2></div>
+
+              <div class="collapsible-body center"><span>A method for staying focused and mentally fresh</span>            
+                <ul>               
+                  <img width="660" alt="Screen Shot 2021-04-18 at 7 02 47 PM" src="https://user-images.githubusercontent.com/79430431/115171881-e8f7b680-a078-11eb-8e87-bc4b1a903cc5.png">
+                </ul>          
+              </div>   
+            </li>
+          </ul>      
+        </section>
+
+        <div class="container">
+
+          <div id="timer">
+            <h3>Timer</h3>
+            <br/>
+            <span class="timerDisplay">25 : 00</span>
+            <br/>
+            <br/>
+            <div class="row">
+              <button class="start waves-effect waves-light btn col s8 offset-s2"><i class="large material-icons">play_arrow</i></button>
+
+              <button class="pause hidden waves-effect waves-light btn col s4 offset-s2"><i class="large material-icons">pause</i></button>
+
+              <button class="resume hidden waves-effect waves-light btn col s4 offset-s2"><i class="large material-icons">play_arrow</i></button>
+
+              <button class="stop hidden waves-effect waves-light btn col s4 push-s1"><i class="large material-icons">stop</i></button>
+
+              <!-- Stuff to test the modals and timer functions -->
+              <!-- <button data-target="modal1" class="btn modal-trigger">Modal 1 test</button>
+              <button data-target="modal2" class="btn modal-trigger">Modal 2 test</button>
+              <button data-target="modal3" class="btn modal-trigger">Modal 3 test</button>
+              <button class="pomodorotest btn" > Pomodoro Loop Test</button>
+              <button class="looptest btn">Loop Test</button> -->
+              
+              <div id="modal1" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                  <h4>Good Work! Take a quick break!</h4>
+                  <p>Working hard is good, but breaks are important. Especially to avoid burning out and losing productivity. Sit back and relax, or stand up and stretch. Staying still for too long is bad both mentally and physically.</p>
+                </div>
+                <div class="modal-footer">
+                  <a class="modal-close waves-effect waves-green btn-flat" id="modalbutton1">Alright!</a>
+                  <button class="modal-close waves-effect waves-green btn-flat pomoDone">Let's Stop Here...</button>
                 </div>
               </div>
-              <div class="modal-footer">
-                <a class="modal-close waves-effect waves-green btn-flat" id="modalbutton2">Break Time!</a>
-                <button class="modal-close waves-effect waves-green btn-flat pomoDone">Let's Stop Here...</button>
-              </div>
-            </div>
 
-            <div id="modal3" class="modal modal-fixed-footer">
-              <div class="modal-content">
-                <h4>That's two cycles of pomodoro!</h4>
-                <p>Congratulations! you've been at this for a while now! Go ahead and stop if you'd like, or if you want to continue, press the start button under the timer again to start anew!</p>
+              <div id="modal2" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                  <h4>Nice! That's four pomodoros. Time for a longer break!</h4>
+                  <p>You've been working hard for a while now. Time for a well deserved break! Grab a snack, or just chill.</p>
+                  <div class="input-field col s6 offset-s3">
+                    <select id='breakselect'>
+                      <option value="" data-time="900" disabled selected>Choose your long break.</option>
+                      <option value='900' data-time="900">15 Mins</option>
+                      <option value='1200' data-time="1200">20 Mins</option>
+                      <option value='1500' data-time="1500">25 Mins</option>
+                      <option value='1800' data-time="1800">30 Mins</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <a class="modal-close waves-effect waves-green btn-flat" id="modalbutton2">Break Time!</a>
+                  <button class="modal-close waves-effect waves-green btn-flat pomoDone">Let's Stop Here...</button>
+                </div>
               </div>
-              <div class="modal-footer">
-                <a class="modal-close waves-effect waves-green btn-flat pomoDone">Close</a>
-              </div>
-            </div>
 
-            <div id="modal4" class="modal modal-fixed-footer">
-              <div class="modal-content">
-                <h4>Breaktime is Over!</h4>
-                <p>Alright, after a quick break, I hope that you're ready and raring to continue!</p>
+              <div id="modal3" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                  <h4>That's two cycles of pomodoro!</h4>
+                  <p>Congratulations! you've been at this for a while now! Go ahead and stop if you'd like, or if you want to continue, press the start button under the timer again to start anew!</p>
+                </div>
+                <div class="modal-footer">
+                  <a class="modal-close waves-effect waves-green btn-flat pomoDone">Close</a>
+                </div>
               </div>
-              <div class="modal-footer">
-                <a class="modal-close waves-effect waves-green btn-flat" id="modalbutton3">Let's Continue!</a>
-                <button class="modal-close waves-effect waves-green btn-flat pomoDone">Let's Stop Here...</button>
+
+              <div id="modal4" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                  <h4>Breaktime is Over!</h4>
+                  <p>Alright, after a quick break, I hope that you're ready and raring to continue!</p>
+                </div>
+                <div class="modal-footer">
+                  <a class="modal-close waves-effect waves-green btn-flat" id="modalbutton3">Let's Continue!</a>
+                  <button class="modal-close waves-effect waves-green btn-flat pomoDone">Let's Stop Here...</button>
+                </div>
               </div>
-            </div>
-        </div>
-        </div>
-        <div id="todo">
-          <h3>To-Do List</h3>
-          <form id="to-do-form" method="POST">
-            <label for="to-do-text">What would you like to accomplish today? </label>
-            <input type="text" placeholder="I want to..." name="to-do-text" id="to-do-text"/>
-          </form>
-          <p>Your current tasks: </p>
-          <ul id="to-do-list"></ul>
-        </div>
-        <div id="cutepix">
-          <h3>Relax with Something Cute</h3>
-          <div id="cutePixDisplay">
-            <img id="cutePixImage" style="max-width: 340px; max-height: 400px"src="">
           </div>
-          <div class="waves-effect waves-light btn col s12" id="cutePixBtn">
-            Gimme Cuteness
           </div>
-        </div>
-        <div id="memeGen">
-          <h3>Meme-o-tron</h3>
-        </div>
-        <div id="api1">
-          <h3>API1</h3>
-        </div>
-        <div id="api2">
-          <h3>Insta-Joke-a-Tron</h3>
-          <button class="waves-effect waves-light btn" id="jokeTest"> Grab a Joke </button>
-          <div id="jokeDisplay">
+          <div id="todo">
+            <h3>To-Do List</h3>
+            <form id="to-do-form" method="POST">
+              <label for="to-do-text">What would you like to accomplish today? </label>
+              <input type="text" placeholder="I want to..." name="to-do-text" id="to-do-text"/>
+            </form>
+            <p>Your current tasks: </p>
+            <ul id="to-do-list"></ul>
+          </div>
 
-            <span id="jokeSetup"></span>
+          <div id="cutepix">
+            <h3>Relax with Something Cute</h3>
+            <div id="cutePixDisplay">
+              <img id="cutePixImage" style="max-width: 340px; max-height: 400px"src="">
+            </div>
+            <div class="waves-effect waves-light btn col s12" id="cutePixBtn">
+              Gimme Cuteness
+            </div>
+          </div>
+
+          <div id="memeGen">
+            <h3>Meme-o-tron</h3>
+            <div id="memeDisplay">
+              <span id="memeTitle"></span>
+              <br/>
+              <img id="memeImage" class="hidden" style="max-width: 340px; max-height: 400px" src="">
+            </div>
+            <div class="waves-effect waves-light btn col s12" id="memeGenBtn">Gimme Memes</div>
+          </div>
+
+          <div id="api1">
+            <h3>Inspirational Quotes</h3>
+            <button class="waves-effect waves-light btn" id="swQuote"> Quote </button>
+            <div id="quoteDisplay">
+
+              <span id="quoteSetup"></span>
+              <br/>
+            </div>
             <br/>
-            <span class="invisible" id="jokePunchline"></span>
           </div>
-          <div>
-            <button class="waves-effect waves-light btn col s12 hidden" id="jokeNext">Next</button>
-            <button class="waves-effect waves-light btn col s12 hidden" id="jokeEnd">New Joke</button>
+          <div id="api2">
+            <h3>Insta-Joke-a-Tron</h3>
+            <button class="waves-effect waves-light btn" id="jokeTest"> Grab a Joke </button>
+            <div id="jokeDisplay">
+
+              <span id="jokeSetup"></span>
+              <br/>
+              <span class="invisible" id="jokePunchline"></span>
+            </div>
+            <div>
+              <button class="waves-effect waves-light btn col s12 hidden" id="jokeNext">Next</button>
+              <button class="waves-effect waves-light btn col s12 hidden" id="jokeEnd">New Joke</button>
+            </div>
           </div>
-          <br/>
-        </div>
-      </div>    
+
+          <footer id="footer" >
+            © Spring 2021 🍅 🍅 Brought to You by Damaximum in BootCampSpot
+        </footer>
+        </div>    
+    </div>
     
-    <footer class="footer">
-      <p>&copy; Spring 2021 🍅 🍅 Brought to You by Damaximum in BootCampSpot</p>
-    </footer>
+  </div> 
     
-
-    
-
-
-
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>
