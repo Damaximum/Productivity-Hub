@@ -56,7 +56,7 @@ function breaktimer() {
     console.log(loop);
     console.log(longbreak);
     longbreak = $('#breakselect').find('option:selected').data('time');
-    if (loop > 1) {
+    if (loop === 2) {
         setTime = longbreak;
         pTimer = setInterval(function (){
             if (!pause) {
@@ -69,7 +69,7 @@ function breaktimer() {
                     pomodoro = 0;
                     loop = 0;
                     
-                    $('#modal3').modal('open');
+                    $('#modal4').modal('open');
                 }
             }
         }, 1000);
@@ -86,7 +86,7 @@ function breaktimer() {
                     pomodoro = 0;
                     loop++;
                     
-                    $('#modal3').modal('open');
+                    $('#modal4').modal('open');
                 }
             }
         }, 1000);
@@ -107,7 +107,7 @@ function shortBreakTimer() {
             if (setTime === 0) {
                 clearInterval(pTimer);
                 
-                $('#modal3').modal('open');
+                $('#modal4').modal('open');
             }
         }
     }, 1000);
@@ -239,18 +239,20 @@ function createToDos() {
         var toDo = toDos[i];
 
         var li = $('<li class="liSpacing">'); 
+        li.attr("data-index", i); 
         var pEl = $('<span class="toDo">');
         pEl.text(toDo); 
-        pEl.attr("data-index", i); 
+        
 
         var button = $('<button class="waves-effect waves-light btn col s12 red darken-3 toDoBtn">'); 
         button.text("Completed"); 
+        
 
         li.append(pEl);
         li.append(button); 
         toDoList.append(li); 
     }
-}
+};
 
 function init() {
     var storedToDos = JSON.parse(localStorage.getItem("toDos"));
@@ -260,11 +262,11 @@ function init() {
     }
 
     createToDos();
-}
+};
 
 function storeToDos() {
     localStorage.setItem("toDos", JSON.stringify(toDos));
-}
+};
 
 toDoForm.on("submit", function(event) { 
     event.preventDefault();
